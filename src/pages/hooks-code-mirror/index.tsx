@@ -1,9 +1,17 @@
 import { useState } from "react";
+import { unifyDocs } from "./utils";
+import useCodeMirror from "./useCodeMirror";
 
 const HooksCodeMirror = () => {
-  const [docs, setDoc] = useState("#hello");
+  const [doc, setDoc] = useState("# hell1o12123123123");
+  const {ref}= useCodeMirror({initialDoc: doc, setDoc})
 
-  return <div>{docs}</div>;
+  return (
+    <>
+      <div className="kkoine" ref={ref}/>
+      <div>{unifyDocs(doc)}</div>
+    </>
+  );
 };
 
 export default HooksCodeMirror;
