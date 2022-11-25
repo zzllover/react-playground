@@ -22,7 +22,7 @@ export const unifyDocs = (doc: string, treeData: any) => {
         javascript,
         typescript
       },
-      ignoreMissing: true
+      ignoreMissing: true,
     })
     .use(() => (tree) => { // 记录格式树
       treeData.current = tree; //treeData length corresponds to previewer's childNodes length

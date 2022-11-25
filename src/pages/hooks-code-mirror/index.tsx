@@ -2,8 +2,8 @@ import { useCallback, useRef, useState } from 'react';
 import useCodeMirror from './useCodeMirror';
 import './index.css';
 import { Root } from 'remark-gfm';
-import 'github-markdown-css/github-markdown-light.css';
-import 'highlight.js/styles/github.css';
+// import 'github-markdown-css/github-markdown-light.css';
+import 'highlight.js/styles/github-dark.css';
 import MarkdownPreview from '../../components/mk';
 /**
  *
