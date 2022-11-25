@@ -1,10 +1,10 @@
-import { useCallback, useMemo, useRef, useState } from 'react';
-import 'github-markdown-css/github-markdown-light.css';
-import { unifyDocs } from './utils';
+import { useCallback, useRef, useState } from 'react';
 import useCodeMirror from './useCodeMirror';
 import './index.css';
 import { Root } from 'remark-gfm';
+import 'github-markdown-css/github-markdown-light.css';
 import 'highlight.js/styles/github.css';
+import MarkdownPreview from '../../components/mk';
 /**
  *
  * demo from
@@ -100,8 +100,6 @@ const HooksCodeMirror = () => {
     }
   }, [computeElemsOffsetTop, markdownElem, previewElem]);
 
-  const previewDom = useMemo(() => unifyDocs(doc, treeData), [doc]);
-
   return (
     <div id="editor-wrapper">
       <div
@@ -120,7 +118,7 @@ const HooksCodeMirror = () => {
           mouseIsOn.current = 'preview';
         }}
       >
-        {previewDom}
+        <MarkdownPreview doc={doc} treeRef={treeData} />
       </div>
     </div>
   );
