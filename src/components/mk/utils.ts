@@ -10,8 +10,15 @@ import rehypeHighlight from 'rehype-highlight'
 import javascript from 'highlight.js/lib/languages/javascript';
 import typescript from 'highlight.js/lib/languages/typescript';
 
+export const getCodeDoc = (doc: string) => {
+  return `
+  \`\`\`js
+  ${doc}
+  \`\`\`
+  `;
+}
 
-export const unifyDocs = (doc: string, treeData: any) => {
+export const unifyDocs = (doc: string, treeData?: any) => {
   const md = unified()
     .use(remarkParse)
     .use(remarkGfm)
@@ -25,7 +32,7 @@ export const unifyDocs = (doc: string, treeData: any) => {
       ignoreMissing: true,
     })
     .use(() => (tree) => { // 记录格式树
-      treeData.current = tree; //treeData length corresponds to previewer's childNodes length
+      treeData && (treeData.current = tree); //treeData length corresponds to previewer's childNodes length
       return tree;
     })
     .use(rehypeMathJaxSvg)

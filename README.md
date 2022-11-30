@@ -8,3 +8,7 @@ TODO: 玩一下 openai
 
 TODO: 玩一下 低代码编辑器
 // https://react-page.github.io/
+
+TODO: 玩一下 service-worker 仅限 谷歌浏览器优化
+// https://blog.bitsrc.io/using-service-workers-with-react-27a4c5e2d1a9
+路由缓存优化

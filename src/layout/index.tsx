@@ -1,7 +1,7 @@
 import { Link, Outlet } from "react-router-dom";
 
 const Layout = () => {
-  return <>
+  return <div style={{height: "100%", overflow: "auto"}}>
     <div>header</div>
     <div>
       <Link to="/hooks-code-mirror">hooks-code-mirror</Link>
@@ -11,7 +11,7 @@ const Layout = () => {
     </div>
     <Link to="/test">test</Link>
     <Outlet />
-  </>;
+  </div>;
 }
 
 export default Layout

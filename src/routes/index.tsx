@@ -4,6 +4,8 @@ import Layout from '../layout'
 import App from '../pages/home/App'
 import HooksCodeMirror from '../pages/hooks-code-mirror'
 
+import HooksProblem from '../pages/hooks-problem'
+
 const MainRouter = () => {
   const routeConfig = createBrowserRouter([
     {
@@ -21,6 +23,10 @@ const MainRouter = () => {
         {
           path: 'test',
           element: <div>teets</div>
+        },
+        {
+          path: 'hooks-problem',
+          element: <HooksProblem />
         }
       ]
     }
