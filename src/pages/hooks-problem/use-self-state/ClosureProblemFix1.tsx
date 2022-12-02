@@ -36,7 +36,7 @@ const useLatest = (state: any) => {
   return ref;
 }
 
-const ClosureProblem = () => {
+const ClosureProblem1 = () => {
   const [count, setCount] = useState(0);
   const refCount = useLatest(count);
 
@@ -46,6 +46,7 @@ const ClosureProblem = () => {
       setCount(refCount.current + 1);
     }, 1000);
     return () => clearInterval(interval);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -57,4 +58,4 @@ const ClosureProblem = () => {
   );
 };
 
-export default ClosureProblem;
+export default ClosureProblem1;

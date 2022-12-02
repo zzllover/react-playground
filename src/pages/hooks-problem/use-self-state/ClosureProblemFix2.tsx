@@ -44,7 +44,7 @@ const useGetState = (initialState: any) => {
   return [state, setState, getState]
 }
 
-const ClosureProblem = () => {
+const ClosureProblem2 = () => {
   const [count, setCount, getState] = useGetState(0);
 
   useEffect(() => {
@@ -53,6 +53,7 @@ const ClosureProblem = () => {
       setCount(getState() + 1);
     }, 1000);
     return () => clearInterval(interval);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -64,4 +65,4 @@ const ClosureProblem = () => {
   );
 };
 
-export default ClosureProblem;
+export default ClosureProblem2;
